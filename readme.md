@@ -16,6 +16,9 @@ The API key used for this project is located in the index.js file under the vari
 
 You can also obtain a free API key from football-data.org by making an account and replace the placeholder YOUR_API_KEY_HERE in the index.js file with your actual API key.
 
+To get the league standings, I used the sub(resource): Competition/Standings which has the url: /v4/competitions/{id}/standings
+To get the top scorers for each league, I used the sub(resource): Competition/(Top)/Scorers which has the url: /v4/competitions/{id}/scorers
+
 ## Running the Project
 
 After cloning the repo,
