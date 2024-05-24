@@ -16,13 +16,13 @@
                     <img src="/images/logo.png" alt="Logo" class="logo">
                 </a>
             </div>
-            <!-- Navbar Links (if any) -->
         </div>
     </nav>
 
     <div class="main-content">
         <div class="league-container">
             <h2 class="league-table">League Table (23-24 Season)</h2>
+            <!-- Loop through each competition and create a box for it -->
             <% competitions.forEach(competition => { %>
                 <div class="league-box">
                     <a href="/competition/<%= competition.id %>">
@@ -31,6 +31,7 @@
                         </div>
                         <div class="league-details">
                             <div class="league-name">
+                                <!-- Competition name with flags on both sides -->
                                 <img src="/images/flags/<%= competition.id%>.png" class="league-flag" alt="<%= competition.name %> Flag" class="league-flag"> 
                                 <%= competition.name %>
                                 <img src="/images/flags/<%= competition.id%>.png" class="league-flag" alt="<%= competition.name %> Flag" class="league-flag"> 
@@ -38,18 +39,19 @@
                         </div>
                     </a>
                 </div>
-            <% }) %>
+            <% }) %> <!-- End of loop -->
         </div>
 
         <div class="top-scorers-container">
             <h2 class="top-scorers-title">Top Scorers</h2>
             <ul class="top-scorers-list">
+                <!-- Loop through each competition and create a link for its top scorers -->
                 <% competitions.forEach(competition => { %>
                     <li class="top-scorer-item">
-                        <a href="/competition/<%= competition.id %>/scorers"><%= competition.name %></a>
-                        <img src="/images/flags/<%= competition.id%>.png" class="league-flag" alt="<%= competition.name %> Flag" class="league-flag"> 
+                        <a href="/competition/<%= competition.id %>/scorers"><%= competition.name %></a> <!-- Link to top scorers -->
+                        <img src="/images/flags/<%= competition.id%>.png" class="league-flag" alt="<%= competition.name %> Flag" class="league-flag"> <!-- Flag icon --> 
                     </li>
-                <% }) %>
+                <% }) %> <!-- End of loop -->
             </ul>
         </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= competitionName %> - Standings</title>
+    <title><%= leagueName %> - Standings</title>
     <link rel="stylesheet" href="/styles.css"> <!-- Link to styles.css -->
 </head>
 <body>
@@ -17,21 +17,22 @@
         </div>
     </nav>
 
-    <h1><%= competitionName %> - Standings</h1>
+    <h1><%= leagueName %> - Standings</h1> <!-- Heading displaying the competition name and "Standings" -->
     <table>
         <thead>
             <tr>
-                <th>#</th>
-                <th>Team</th>
-                <th>Played</th>
-                <th>Won</th>
-                <th>Drawn</th>
-                <th>Lost</th>
-                <th>Points</th>
-                <th>Goal Difference</th>
+                <th>#</th> <!-- Column for team position -->
+                <th>Team</th> <!-- Column for team name and crest -->
+                <th>Played</th> <!-- Column for games played -->
+                <th>Won</th> <!-- Column for games won -->
+                <th>Drawn</th> <!-- Column for games drawn -->
+                <th>Lost</th> <!-- Column for games lost -->
+                <th>Points</th> <!-- Column for points -->
+                <th>Goal Difference</th> <!-- Column for goal difference -->
             </tr>
         </thead>
         <tbody>
+            <!-- Loop through each team in the standings and create a row for it -->
             <% standings.forEach(team => { %>
                 <tr>
                     <td><%= team.position %></td>
@@ -49,5 +50,8 @@
             <% }) %>
         </tbody>
     </table>
+
+    <!-- Link to go back to the homepage -->
+    <a href="/">Back to Homepage</a>
 </body>
 </html>

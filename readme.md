@@ -4,6 +4,11 @@
 
 This project is a web application that displays the standings of Europe's top 5 football leagues, and their top scorers. Users can navigate between the league tables and top scorers pages for each league.
 
+## Resources Used
+
+Used the API to get the league table standings and relevant data, top ten scorers of each league, and team crests.
+Used the web to get images for the players, flag images, and the home logo.
+
 ## Prerequisites
 
 - Node.js (v14 or higher recommended)
