@@ -9,42 +9,11 @@ This project is a web application that displays the standings of Europe's top 5 
 - Node.js (v14 or higher recommended)
 - npm (Node Package Manager)
 
-## Installation
-
 ## API - football-data
 
 The API key used for this project is located in the index.js file under the variable: const API_KEY = '9506b895a12d4004ad68580ccfdb70cf';
 
 You can also obtain a free API key from football-data.org by making an account and replace the placeholder YOUR_API_KEY_HERE in the index.js file with your actual API key.
-
-Project Structure
-
-project-root/
-│
-├── public/
-│ ├── images/
-│ │ ├── league/
-│ │ │ ├── PL.png
-│ │ │ ├── PD.png
-│ │ │ └── ...
-│ │ ├── flags/
-│ │ │ ├── england.png
-│ │ │ ├── spain.png
-│ │ │ └── ...
-│ │ ├── players/
-│ │ │ ├── pl/erling-haaland.png
-│ │ │ └── ...
-│ │ ├── logo.png
-│ ├── styles.css
-│
-├── views/
-│ ├── homepage.ejs
-│ ├── top_scorers.ejs
-│ └── league_table.ejs
-│
-├── index.js
-├── package.json
-└── README.md
 
 ## Running the Project
 
