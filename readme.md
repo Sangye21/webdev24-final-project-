@@ -35,13 +35,11 @@ Open your web browser and go to http://localhost:3000.
 
 ##
 
-Homepage: Displays the top 5 leagues and top scorers.
-
 URL: /
 
 Template: homepage.ejs
 
-Homepage: Displays links to each league table and their top scorers.
+Homepage: Displays the top 5 leagues and top scorers.
 
 ##
 
