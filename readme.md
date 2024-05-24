@@ -1,4 +1,4 @@
-# Top 5 Socccer League Stats
+# Top 5 Soccer League Stats
 
 ## League Table and Top Scorers for each League
 
