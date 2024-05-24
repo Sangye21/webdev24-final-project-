@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Scorers - <%= competitionName %></title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Link to styles.css -->
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="/" class="navbar-logo">
+                    <img src="/images/logo.png" alt="Logo" class="logo">
+                </a>
+            </div>
+            <!-- Navbar Links (if any) -->
+        </div>
+    </nav>
+    
+    <h1><%= competitionName %> (23-24 Season)</h1>
+    <h2>Top Scorers</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Player</th>
+                <th>Goals</th>
+                <th>Nationality</th>
+                <th>Club</th> <!-- New column for Club -->
+            </tr>
+        </thead>
+        <tbody>
+            <% let serialNumber = 1; %>
+            <% data.forEach(player => { %>
+                <tr>
+                    <td class="serial-number"><%= serialNumber++ %></td> <!-- Increment and display serial number -->
+                    <td class="player-info">
+                        <% 
+                            // Generate the image filename based on the player's name and league
+                            const league = competitionName;
+                            const playerName = player.player.name.toLowerCase().replace(/ /g, '-');
+                            const imagePath = `/images/${league}/${playerName}.png`; // Assuming the image file extension is PNG
+                        %>
+                        <img src="<%= imagePath %>" alt="Player Image" onerror="this.onerror=null;this.src='/images/default.jpg';">
+                        <span><%= player.player.name %></span>
+                    </td>
+                    <td><%= player.goals %></td>
+                    <td><%= player.player.nationality %></td>
+                    <td> <!-- New column for Club -->
+                        <div class="club-info"> <!-- Flex container for club info -->
+                            <img src="<%= player.team.crest %>" alt="<%= player.team.name %> Crest"> <!-- Display club crest -->
+                            <span><%= player.team.name %></span> <!-- Display club name -->
+                        </div>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <!-- Link to go back to the homepage -->
+    <a href="/">Back to Homepage</a>
+</body>
+</html>

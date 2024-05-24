@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= competitionName %> - Standings</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Link to styles.css -->
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="/" class="navbar-logo">
+                    <img src="/images/logo.png" alt="Logo" class="logo">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <h1><%= competitionName %> - Standings</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Team</th>
+                <th>Played</th>
+                <th>Won</th>
+                <th>Drawn</th>
+                <th>Lost</th>
+                <th>Points</th>
+                <th>Goals For</th>
+                <th>Goals Against</th>
+                <th>Goal Difference</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% standings.forEach(team => { %>
+                <tr>
+                    <td><%= team.position %></td>
+                    <td>
+                        <img src="<%= team.team.crest %>" alt="<%= team.team.name %> Crest" class="team-crest">
+                        <%= team.team.name %>
+                    </td>
+                    <td><%= team.playedGames %></td>
+                    <td><%= team.won %></td>
+                    <td><%= team.draw %></td>
+                    <td><%= team.lost %></td>
+                    <td><%= team.points %></td>
+                    <td><%= team.goalsFor %></td>
+                    <td><%= team.goalsAgainst %></td>
+                    <td><%= team.goalDifference %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

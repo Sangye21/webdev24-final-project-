@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Link to styles.css -->
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="/" class="navbar-logo">
+                    <img src="/images/logo.png" alt="Logo" class="logo">
+                </a>
+            </div>
+            <!-- Navbar Links (if any) -->
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="league-container">
+            <h2 class="league-table">League Table (23-24 Season)</h2>
+            <% competitions.forEach(competition => { %>
+                <div class="league-box">
+                    <a href="/competition/<%= competition.id %>">
+                        <div class="image-container">
+                            <img src="/images/league/<%= competition.id %>.png" alt="<%= competition.name %> Logo" class="league-logo">
+                        </div>
+                        <div class="league-details">
+                            <div class="league-name">
+                                <img src="/images/flags/<%= competition.id%>.png" class="league-flag" alt="<%= competition.name %> Flag" class="league-flag"> 
+                                <%= competition.name %>
+                                <img src="/images/flags/<%= competition.id%>.png" class="league-flag" alt="<%= competition.name %> Flag" class="league-flag"> 
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <% }) %>
+        </div>
+
+        <div class="top-scorers-container">
+            <h2 class="top-scorers-title">Top Scorers</h2>
+            <ul class="top-scorers-list">
+                <% competitions.forEach(competition => { %>
+                    <li class="top-scorer-item">
+                        <a href="/competition/<%= competition.id %>/scorers"><%= competition.name %></a>
+                        <img src="/images/flags/<%= competition.id%>.png" class="league-flag" alt="<%= competition.name %> Flag" class="league-flag"> 
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
