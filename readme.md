@@ -33,6 +33,8 @@ Open your web browser and go to http://localhost:3000.
 
 ## Routes
 
+##
+
 Homepage: Displays the top 5 leagues and top scorers.
 
 URL: /
@@ -41,11 +43,15 @@ Template: homepage.ejs
 
 Homepage: Displays links to each league table and their top scorers.
 
+##
+
 URL: /league/:id
 
 Template: league_table.ejs
 
 League Table: Displays the standings of the selected league.
+
+##
 
 URL: /competition/:id
 
