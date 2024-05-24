@@ -11,6 +11,7 @@ This project is a web application that displays the standings of Europe's top 5 
 
 ## API - football-data
 
+The API used for this project is: https://www.football-data.org/
 The API key used for this project is located in the index.js file under the variable: const API_KEY = '9506b895a12d4004ad68580ccfdb70cf';
 
 You can also obtain a free API key from football-data.org by making an account and replace the placeholder YOUR_API_KEY_HERE in the index.js file with your actual API key.
